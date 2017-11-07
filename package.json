@@ -1,0 +1,25 @@
+{
+  "name": "event-helper",
+  "version": "1.0.0",
+  "description": "Helper to extract parameters from AWS lambda event",
+  "main": "event-helper.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chiiaik/serverless-lambda-event-helper.git"
+  },
+  "keywords": [
+    "serverless",
+    "lambda",
+    "aws",
+    "event"
+  ],
+  "author": "Chii Aik Fang",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/chiiaik/serverless-lambda-event-helper/issues"
+  },
+  "homepage": "https://github.com/chiiaik/serverless-lambda-event-helper#readme"
+}
