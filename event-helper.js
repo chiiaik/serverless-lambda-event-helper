@@ -17,14 +17,24 @@ function EventHelper(event) {
         return null;
     };
 
-    this.getApiKey = function() {
+    this.getIdentity = function () {
         if (!this.event.requestContext ||
-            !this.event.requestContext.identity ||
-            !this.event.requestContext.identity.apiKey) {
+            !this.event.requestContext.identity) {
             return null;
         }
 
-        let apiKey = this.event.requestContext.identity.apiKey;
+        return this.event.requestContext.identity;
+    }
+
+    this.getApiKey = function () {
+        
+        let identity = this.getIdentity();
+
+        if (identity.apiKey) {
+            return null;
+        }
+
+        let apiKey = identity.apiKey;
         
         return apiKey;
     };
