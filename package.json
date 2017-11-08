@@ -1,5 +1,5 @@
 {
-  "name": "event-helper",
+  "name": "serverless-lambda-event-helper",
   "version": "1.0.0",
   "description": "Helper to extract parameters from AWS lambda event",
   "main": "event-helper.js",
