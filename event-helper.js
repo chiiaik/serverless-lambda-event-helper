@@ -1,5 +1,10 @@
 function EventHelper(event) {
     this.event = event;
+
+    this.getHeaders = function () {
+        return this.event.headers;
+    }
+
     this.getBody = function() {
         if (!this.event.body) {
             return null;
@@ -18,12 +23,10 @@ function EventHelper(event) {
             !this.event.requestContext.identity.apiKey) {
             return null;
         }
-        try {
-            return JSON.parse(this.event.requestContext.identity.apiKey);
-        } catch (error) {
 
-        }
-        return null;
+        let apiKey = this.event.requestContext.identity.apiKey;
+        
+        return apiKey;
     };
 
     this.getQueryStrings = function() {
