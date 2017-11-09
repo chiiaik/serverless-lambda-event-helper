@@ -1,5 +1,10 @@
 function EventHelper(event) {
     this.event = event;
+
+    this.getHeaders = function () {
+        return this.event.headers;
+    }
+
     this.getBody = function() {
         if (!this.event.body) {
             return null;
@@ -12,18 +17,26 @@ function EventHelper(event) {
         return null;
     };
 
-    this.getApiKey = function() {
+    this.getIdentity = function () {
         if (!this.event.requestContext ||
-            !this.event.requestContext.identity ||
-            !this.event.requestContext.identity.apiKey) {
+            !this.event.requestContext.identity) {
             return null;
         }
-        try {
-            return JSON.parse(this.event.requestContext.identity.apiKey);
-        } catch (error) {
 
+        return this.event.requestContext.identity;
+    }
+
+    this.getApiKey = function () {
+        
+        let identity = this.getIdentity();
+
+        if (identity.apiKey) {
+            return null;
         }
-        return null;
+
+        let apiKey = identity.apiKey;
+        
+        return apiKey;
     };
 
     this.getQueryStrings = function() {
