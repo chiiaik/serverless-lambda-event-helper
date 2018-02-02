@@ -52,5 +52,12 @@ function EventHelper(event) {
         }
         return this.event.pathParameters;
     };
+
+    this.getRecords = function() {
+        if (!this.event.Records) {
+            return null;
+        }
+        return this.event.Records;
+    }
 }
 module.exports = EventHelper;
