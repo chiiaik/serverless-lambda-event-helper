@@ -59,5 +59,15 @@ function EventHelper(event) {
         }
         return this.event.Records;
     }
+
+    this.getEndpoint = function() {
+        if (!this.event.headers && 
+            !this.event.requestContext && 
+            !this.event.requestContext.path) {
+            return null;
+        }
+        let protocol = this.event.headers['X-Forwarded-Proto'];
+        return (protocol ? protocol : 'http') + this.event.headers.Host + this.event.requestContext.path;
+    }
 }
 module.exports = EventHelper;
