@@ -67,7 +67,7 @@ function EventHelper(event) {
             return null;
         }
         let protocol = this.event.headers['X-Forwarded-Proto'];
-        return (protocol ? protocol : 'http') + this.event.headers.Host + this.event.requestContext.path;
+        return (protocol ? protocol : 'http') + '://' + this.event.headers.Host + this.event.requestContext.path;
     }
 }
 module.exports = EventHelper;
