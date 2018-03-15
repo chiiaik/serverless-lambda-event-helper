@@ -55,6 +55,5 @@
         "apiId": "ldem7kezdf"
     },
     "body": "{\n    \"bodyKey\": \"bodyValue\"\n}",
-    "isBase64Encoded": false,
-    "Records": null
+    "isBase64Encoded": false
 }

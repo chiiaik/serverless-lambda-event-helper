@@ -1,20 +1,20 @@
-function AWS (event) {
+function HttpTrigger (event) {
     this.event = event;
 }
 
-AWS.prototype.getHost = function () {
+HttpTrigger.prototype.getHost = function () {
     return this.event.headers.Host;
 }
 
-AWS.prototype.getHeaders = function () {
+HttpTrigger.prototype.getHeaders = function () {
     return this.event.headers;
 }
 
-AWS.prototype.getMethod = function () {
+HttpTrigger.prototype.getMethod = function () {
     return this.event.httpMethod.toLowerCase();
 }
 
-AWS.prototype.getBody = function () {
+HttpTrigger.prototype.getBody = function () {
     if (!this.event.body) {
         return null;
     }
@@ -26,7 +26,7 @@ AWS.prototype.getBody = function () {
     return null;
 };
 
-AWS.prototype.getIdentity = function () {
+HttpTrigger.prototype.getIdentity = function () {
     if (!this.event.requestContext ||
         !this.event.requestContext.identity) {
         return null;
@@ -35,7 +35,7 @@ AWS.prototype.getIdentity = function () {
     return this.event.requestContext.identity;
 }
 
-AWS.prototype.getApiKey = function () {
+HttpTrigger.prototype.getApiKey = function () {
     if (!this.event.requestContext ||
         !this.event.requestContext.identity ||
         !this.event.requestContext.identity.apiKey) {
@@ -45,28 +45,21 @@ AWS.prototype.getApiKey = function () {
     return this.event.requestContext.identity.apiKey;
 };
 
-AWS.prototype.getQueryStrings = function() {
+HttpTrigger.prototype.getQueryStrings = function() {
     if (!this.event.queryStringParameters) {
         return null;
     }
     return this.event.queryStringParameters;
 };
 
-AWS.prototype.getPathParameters = function() {
+HttpTrigger.prototype.getPathParameters = function() {
     if (!this.event.pathParameters) {
         return null;
     }
     return this.event.pathParameters;
 };
 
-AWS.prototype.getRecords = function() {
-    if (!this.event.Records) {
-        return null;
-    }
-    return this.event.Records;
-}
-
-AWS.prototype.getEndpoint = function() {
+HttpTrigger.prototype.getEndpoint = function() {
     if (!this.event.headers && 
         !this.event.requestContext && 
         !this.event.requestContext.path) {
@@ -76,4 +69,4 @@ AWS.prototype.getEndpoint = function() {
     return (protocol ? protocol : 'http') + '://' + this.event.headers.Host + this.event.requestContext.path;
 }
 
-module.exports = AWS;
+module.exports = HttpTrigger;
