@@ -36,16 +36,13 @@ AWS.prototype.getIdentity = function () {
 }
 
 AWS.prototype.getApiKey = function () {
-    
-    let identity = this.getIdentity();
-
-    if (identity.apiKey) {
+    if (!this.event.requestContext ||
+        !this.event.requestContext.identity ||
+        !this.event.requestContext.identity.apiKey) {
         return null;
     }
 
-    let apiKey = identity.apiKey;
-    
-    return apiKey;
+    return this.event.requestContext.identity.apiKey;
 };
 
 AWS.prototype.getQueryStrings = function() {
