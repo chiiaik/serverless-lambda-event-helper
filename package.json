@@ -1,10 +1,10 @@
 {
   "name": "serverless-lambda-event-helper",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Wrapper to map HTTP trigger events",
   "main": "index.js",
   "scripts": {
-    "test": "jest __test__/**.test.js"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
