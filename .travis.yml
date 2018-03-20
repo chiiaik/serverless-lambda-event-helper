@@ -1,0 +1,5 @@
+langugage: node_js
+node_js:
+  - "6.10.0"
+before_install:
+  - yarn add jest --dev

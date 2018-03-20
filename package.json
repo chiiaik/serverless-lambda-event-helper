@@ -1,7 +1,7 @@
 {
   "name": "serverless-lambda-event-helper",
-  "version": "1.0.7",
-  "description": "Helper to extract parameters from AWS lambda event",
+  "version": "1.0.8",
+  "description": "Wrapper to map HTTP trigger events",
   "main": "index.js",
   "scripts": {
     "test": "jest __test__/**.test.js"
