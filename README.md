@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/chiiaik/serverless-http-trigger.svg?branch=master)](https://travis-ci.org/chiiaik/serverless-http-trigger)
+[![Build Status](https://travis-ci.org/chiiaik/serverless-lambda-event-helper.svg?branch=master)](https://travis-ci.org/chiiaik/serverless-lambda-event-helper)
 
 # Project Title
 
