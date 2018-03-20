@@ -2,7 +2,7 @@
 
 # Project Title
 
-Wrapper to map HTTP trigger events.
+Wrapper to map HTTP trigger events from AWS and Azure.
 
 ## Getting Started
 
