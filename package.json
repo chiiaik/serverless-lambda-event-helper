@@ -4,7 +4,7 @@
   "description": "Wrapper to map HTTP trigger events",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --verbose --coverage"
   },
   "repository": {
     "type": "git",
