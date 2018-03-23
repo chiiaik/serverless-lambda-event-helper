@@ -60,8 +60,8 @@ HttpTrigger.prototype.getPathParameters = function() {
 };
 
 HttpTrigger.prototype.getEndpoint = function() {
-    if (!this.event.headers && 
-        !this.event.requestContext && 
+    if (!this.event.headers || 
+        !this.event.requestContext ||
         !this.event.requestContext.path) {
         return null;
     }

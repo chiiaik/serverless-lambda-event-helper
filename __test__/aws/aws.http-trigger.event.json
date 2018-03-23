@@ -23,8 +23,12 @@
         "X-Forwarded-Port": "443",
         "X-Forwarded-Proto": "https"
     },
-    "queryStringParameters": null,
-    "pathParameters": null,
+    "queryStringParameters": {
+        "queryKey": "queryValue"
+    },
+    "pathParameters": {
+        "pathKey": "pathValue"
+    },
     "stageVariables": null,
     "requestContext": {
         "requestTime": "09/Feb/2018:08:08:40 +0000",

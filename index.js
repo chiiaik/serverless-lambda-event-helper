@@ -62,8 +62,8 @@ function Event(event) {
     };
     
     this.getEndpoint = function() {
-        if (!this.event.headers && 
-            !this.event.requestContext && 
+        if (!this.event.headers || 
+            !this.event.requestContext || 
             !this.event.requestContext.path) {
             return null;
         }
