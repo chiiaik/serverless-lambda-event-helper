@@ -1,6 +1,6 @@
 {
   "name": "serverless-lambda-event-helper",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Wrapper to map HTTP trigger events",
   "main": "index.js",
   "scripts": {
